@@ -1,0 +1,37 @@
+{
+  "lat": 51.5074,
+  "lon": -0.1278,
+  "timezone": "GMT",
+  "timezone_offset": 0,
+  "current": {
+    "temp": 20.0,
+    "humidity": 60,
+    "pressure": 1013,
+    "weather": [
+      {
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "wind_speed": 5.0
+  },
+  "daily": [
+    {
+      "dt": 1629139200,
+      "temp": {
+        "day": 20.0,
+        "min": 15.0,
+        "max": 25.0
+      },
+      "humidity": 60,
+      "pressure": 1013,
+      "weather": [
+        {
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "wind_speed": 5.0
+    }
+  ]
+}
