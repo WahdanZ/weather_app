@@ -54,7 +54,7 @@ void main() async {
       expect(response.current.pressure, 1013);
       expect(response.current.weather[0].description, 'clear sky');
       expect(response.current.weather[0].icon, '01d');
-      expect(response.current.wind_speed, 5.0);
+      expect(response.current.windSpeed, 5.0);
       expect(response.daily.length, 1);
       expect(response.daily[0].temp.day, 20.0);
       expect(response.daily[0].temp.min, 15.0);

@@ -12,7 +12,7 @@ class Current with _$Current {
     required int humidity,
     required int pressure,
     required List<Weather> weather,
-    required double wind_speed,
+    required double windSpeed,
   }) = _Current;
 
   factory Current.fromJson(Map<String, dynamic> json) =>

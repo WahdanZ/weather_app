@@ -12,7 +12,7 @@ class OneCallResponse with _$OneCallResponse {
     required double lat,
     required double lon,
     required String timezone,
-    required int timezone_offset,
+    @JsonKey(name: 'timezone_offset') required int timezoneOffset,
     required Current current,
     required List<Daily> daily,
   }) = _OneCallResponse;

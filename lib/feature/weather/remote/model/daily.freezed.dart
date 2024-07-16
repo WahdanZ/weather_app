@@ -24,7 +24,8 @@ mixin _$Daily {
   int get humidity => throw _privateConstructorUsedError;
   int get pressure => throw _privateConstructorUsedError;
   List<Weather> get weather => throw _privateConstructorUsedError;
-  double get wind_speed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wind_speed')
+  double get windSpeed => throw _privateConstructorUsedError;
   int get dt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,7 +43,7 @@ abstract class $DailyCopyWith<$Res> {
       int humidity,
       int pressure,
       List<Weather> weather,
-      double wind_speed,
+      @JsonKey(name: 'wind_speed') double windSpeed,
       int dt});
 
   $TempCopyWith<$Res> get temp;
@@ -65,7 +66,7 @@ class _$DailyCopyWithImpl<$Res, $Val extends Daily>
     Object? humidity = null,
     Object? pressure = null,
     Object? weather = null,
-    Object? wind_speed = null,
+    Object? windSpeed = null,
     Object? dt = null,
   }) {
     return _then(_value.copyWith(
@@ -85,9 +86,9 @@ class _$DailyCopyWithImpl<$Res, $Val extends Daily>
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<Weather>,
-      wind_speed: null == wind_speed
-          ? _value.wind_speed
-          : wind_speed // ignore: cast_nullable_to_non_nullable
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
               as double,
       dt: null == dt
           ? _value.dt
@@ -117,7 +118,7 @@ abstract class _$$DailyImplCopyWith<$Res> implements $DailyCopyWith<$Res> {
       int humidity,
       int pressure,
       List<Weather> weather,
-      double wind_speed,
+      @JsonKey(name: 'wind_speed') double windSpeed,
       int dt});
 
   @override
@@ -139,7 +140,7 @@ class __$$DailyImplCopyWithImpl<$Res>
     Object? humidity = null,
     Object? pressure = null,
     Object? weather = null,
-    Object? wind_speed = null,
+    Object? windSpeed = null,
     Object? dt = null,
   }) {
     return _then(_$DailyImpl(
@@ -159,9 +160,9 @@ class __$$DailyImplCopyWithImpl<$Res>
           ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<Weather>,
-      wind_speed: null == wind_speed
-          ? _value.wind_speed
-          : wind_speed // ignore: cast_nullable_to_non_nullable
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
               as double,
       dt: null == dt
           ? _value.dt
@@ -179,7 +180,7 @@ class _$DailyImpl implements _Daily {
       required this.humidity,
       required this.pressure,
       required final List<Weather> weather,
-      required this.wind_speed,
+      @JsonKey(name: 'wind_speed') required this.windSpeed,
       required this.dt})
       : _weather = weather;
 
@@ -201,13 +202,14 @@ class _$DailyImpl implements _Daily {
   }
 
   @override
-  final double wind_speed;
+  @JsonKey(name: 'wind_speed')
+  final double windSpeed;
   @override
   final int dt;
 
   @override
   String toString() {
-    return 'Daily(temp: $temp, humidity: $humidity, pressure: $pressure, weather: $weather, wind_speed: $wind_speed, dt: $dt)';
+    return 'Daily(temp: $temp, humidity: $humidity, pressure: $pressure, weather: $weather, windSpeed: $windSpeed, dt: $dt)';
   }
 
   @override
@@ -221,15 +223,15 @@ class _$DailyImpl implements _Daily {
             (identical(other.pressure, pressure) ||
                 other.pressure == pressure) &&
             const DeepCollectionEquality().equals(other._weather, _weather) &&
-            (identical(other.wind_speed, wind_speed) ||
-                other.wind_speed == wind_speed) &&
+            (identical(other.windSpeed, windSpeed) ||
+                other.windSpeed == windSpeed) &&
             (identical(other.dt, dt) || other.dt == dt));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, temp, humidity, pressure,
-      const DeepCollectionEquality().hash(_weather), wind_speed, dt);
+      const DeepCollectionEquality().hash(_weather), windSpeed, dt);
 
   @JsonKey(ignore: true)
   @override
@@ -251,7 +253,7 @@ abstract class _Daily implements Daily {
       required final int humidity,
       required final int pressure,
       required final List<Weather> weather,
-      required final double wind_speed,
+      @JsonKey(name: 'wind_speed') required final double windSpeed,
       required final int dt}) = _$DailyImpl;
 
   factory _Daily.fromJson(Map<String, dynamic> json) = _$DailyImpl.fromJson;
@@ -265,7 +267,8 @@ abstract class _Daily implements Daily {
   @override
   List<Weather> get weather;
   @override
-  double get wind_speed;
+  @JsonKey(name: 'wind_speed')
+  double get windSpeed;
   @override
   int get dt;
   @override

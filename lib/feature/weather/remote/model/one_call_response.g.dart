@@ -12,7 +12,7 @@ _$OneCallResponseImpl _$$OneCallResponseImplFromJson(
       lat: (json['lat'] as num).toDouble(),
       lon: (json['lon'] as num).toDouble(),
       timezone: json['timezone'] as String,
-      timezone_offset: (json['timezone_offset'] as num).toInt(),
+      timezoneOffset: (json['timezone_offset'] as num).toInt(),
       current: Current.fromJson(json['current'] as Map<String, dynamic>),
       daily: (json['daily'] as List<dynamic>)
           .map((e) => Daily.fromJson(e as Map<String, dynamic>))
@@ -25,7 +25,7 @@ Map<String, dynamic> _$$OneCallResponseImplToJson(
       'lat': instance.lat,
       'lon': instance.lon,
       'timezone': instance.timezone,
-      'timezone_offset': instance.timezone_offset,
+      'timezone_offset': instance.timezoneOffset,
       'current': instance.current,
       'daily': instance.daily,
     };

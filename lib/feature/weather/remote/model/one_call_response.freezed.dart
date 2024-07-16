@@ -23,7 +23,8 @@ mixin _$OneCallResponse {
   double get lat => throw _privateConstructorUsedError;
   double get lon => throw _privateConstructorUsedError;
   String get timezone => throw _privateConstructorUsedError;
-  int get timezone_offset => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timezone_offset')
+  int get timezoneOffset => throw _privateConstructorUsedError;
   Current get current => throw _privateConstructorUsedError;
   List<Daily> get daily => throw _privateConstructorUsedError;
 
@@ -43,7 +44,7 @@ abstract class $OneCallResponseCopyWith<$Res> {
       {double lat,
       double lon,
       String timezone,
-      int timezone_offset,
+      @JsonKey(name: 'timezone_offset') int timezoneOffset,
       Current current,
       List<Daily> daily});
 
@@ -66,7 +67,7 @@ class _$OneCallResponseCopyWithImpl<$Res, $Val extends OneCallResponse>
     Object? lat = null,
     Object? lon = null,
     Object? timezone = null,
-    Object? timezone_offset = null,
+    Object? timezoneOffset = null,
     Object? current = null,
     Object? daily = null,
   }) {
@@ -83,9 +84,9 @@ class _$OneCallResponseCopyWithImpl<$Res, $Val extends OneCallResponse>
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
-      timezone_offset: null == timezone_offset
-          ? _value.timezone_offset
-          : timezone_offset // ignore: cast_nullable_to_non_nullable
+      timezoneOffset: null == timezoneOffset
+          ? _value.timezoneOffset
+          : timezoneOffset // ignore: cast_nullable_to_non_nullable
               as int,
       current: null == current
           ? _value.current
@@ -119,7 +120,7 @@ abstract class _$$OneCallResponseImplCopyWith<$Res>
       {double lat,
       double lon,
       String timezone,
-      int timezone_offset,
+      @JsonKey(name: 'timezone_offset') int timezoneOffset,
       Current current,
       List<Daily> daily});
 
@@ -141,7 +142,7 @@ class __$$OneCallResponseImplCopyWithImpl<$Res>
     Object? lat = null,
     Object? lon = null,
     Object? timezone = null,
-    Object? timezone_offset = null,
+    Object? timezoneOffset = null,
     Object? current = null,
     Object? daily = null,
   }) {
@@ -158,9 +159,9 @@ class __$$OneCallResponseImplCopyWithImpl<$Res>
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
-      timezone_offset: null == timezone_offset
-          ? _value.timezone_offset
-          : timezone_offset // ignore: cast_nullable_to_non_nullable
+      timezoneOffset: null == timezoneOffset
+          ? _value.timezoneOffset
+          : timezoneOffset // ignore: cast_nullable_to_non_nullable
               as int,
       current: null == current
           ? _value.current
@@ -181,7 +182,7 @@ class _$OneCallResponseImpl implements _OneCallResponse {
       {required this.lat,
       required this.lon,
       required this.timezone,
-      required this.timezone_offset,
+      @JsonKey(name: 'timezone_offset') required this.timezoneOffset,
       required this.current,
       required final List<Daily> daily})
       : _daily = daily;
@@ -196,7 +197,8 @@ class _$OneCallResponseImpl implements _OneCallResponse {
   @override
   final String timezone;
   @override
-  final int timezone_offset;
+  @JsonKey(name: 'timezone_offset')
+  final int timezoneOffset;
   @override
   final Current current;
   final List<Daily> _daily;
@@ -209,7 +211,7 @@ class _$OneCallResponseImpl implements _OneCallResponse {
 
   @override
   String toString() {
-    return 'OneCallResponse(lat: $lat, lon: $lon, timezone: $timezone, timezone_offset: $timezone_offset, current: $current, daily: $daily)';
+    return 'OneCallResponse(lat: $lat, lon: $lon, timezone: $timezone, timezoneOffset: $timezoneOffset, current: $current, daily: $daily)';
   }
 
   @override
@@ -221,8 +223,8 @@ class _$OneCallResponseImpl implements _OneCallResponse {
             (identical(other.lon, lon) || other.lon == lon) &&
             (identical(other.timezone, timezone) ||
                 other.timezone == timezone) &&
-            (identical(other.timezone_offset, timezone_offset) ||
-                other.timezone_offset == timezone_offset) &&
+            (identical(other.timezoneOffset, timezoneOffset) ||
+                other.timezoneOffset == timezoneOffset) &&
             (identical(other.current, current) || other.current == current) &&
             const DeepCollectionEquality().equals(other._daily, _daily));
   }
@@ -230,7 +232,7 @@ class _$OneCallResponseImpl implements _OneCallResponse {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, lat, lon, timezone,
-      timezone_offset, current, const DeepCollectionEquality().hash(_daily));
+      timezoneOffset, current, const DeepCollectionEquality().hash(_daily));
 
   @JsonKey(ignore: true)
   @override
@@ -252,7 +254,7 @@ abstract class _OneCallResponse implements OneCallResponse {
       {required final double lat,
       required final double lon,
       required final String timezone,
-      required final int timezone_offset,
+      @JsonKey(name: 'timezone_offset') required final int timezoneOffset,
       required final Current current,
       required final List<Daily> daily}) = _$OneCallResponseImpl;
 
@@ -266,7 +268,8 @@ abstract class _OneCallResponse implements OneCallResponse {
   @override
   String get timezone;
   @override
-  int get timezone_offset;
+  @JsonKey(name: 'timezone_offset')
+  int get timezoneOffset;
   @override
   Current get current;
   @override
