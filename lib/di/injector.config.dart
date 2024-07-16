@@ -12,7 +12,8 @@ import 'package:dio/dio.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'app_module.dart' as _i4;
+import '../feature/weather/remote/weather_api.dart' as _i4;
+import 'app_module.dart' as _i5;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -41,7 +42,11 @@ _i1.GetIt $initGetIt(
       _dev,
     },
   );
+  gh.factory<_i4.WeatherApiClient>(() => _i4.WeatherApiClient(
+        gh<_i3.Dio>(instanceName: 'dio_client'),
+        baseUrl: gh<String>(instanceName: 'base_url'),
+      ));
   return getIt;
 }
 
-class _$AppModule extends _i4.AppModule {}
+class _$AppModule extends _i5.AppModule {}
