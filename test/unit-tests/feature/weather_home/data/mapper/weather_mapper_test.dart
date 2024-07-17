@@ -15,7 +15,7 @@ void main() {
           humidity: 60,
           pressure: 1013,
           windSpeed: 5.0,
-          weather: [Weather(description: 'clear sky', icon: '01d')],
+          weather: [WeatherModel(description: 'clear sky', icon: '01d')],
         ),
         daily: [
           Daily(
@@ -24,7 +24,7 @@ void main() {
             humidity: 60,
             pressure: 1013,
             windSpeed: 5.0,
-            weather: [Weather(description: 'clear sky', icon: '01d')],
+            weather: [WeatherModel(description: 'clear sky', icon: '01d')],
           )
         ],
       );

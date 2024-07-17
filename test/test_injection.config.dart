@@ -25,6 +25,9 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.factory<_i3.MockDio>(() => _i3.MockDio());
+    gh.factory<_i3.MockWeatherApiClient>(() => _i3.MockWeatherApiClient());
+    gh.factory<_i3.MockWeatherMapper>(() => _i3.MockWeatherMapper());
+    gh.factory<_i3.MockNetworkTaskManager>(() => _i3.MockNetworkTaskManager());
     return this;
   }
 }
