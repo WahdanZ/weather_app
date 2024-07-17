@@ -16,8 +16,9 @@ import '../base/index.dart' as _i8;
 import '../base/remote/network_task_manager.dart' as _i4;
 import '../feature/weather/data/mapper/weather_mapper.dart' as _i3;
 import '../feature/weather/data/repository/weather_repository.dart' as _i7;
+import '../feature/weather/domain/usecases/get_weather_forecast.dart' as _i9;
 import '../feature/weather/remote/weather_api.dart' as _i6;
-import 'app_module.dart' as _i9;
+import 'app_module.dart' as _i10;
 
 const String _prod = 'prod';
 const String _dev = 'dev';
@@ -58,7 +59,9 @@ _i1.GetIt $initGetIt(
         gh<String>(instanceName: 'api_key'),
         gh<_i8.NetworkTaskManager>(),
       ));
+  gh.factory<_i9.GetWeatherForecastUseCase>(
+      () => _i9.GetWeatherForecastUseCase(gh<_i7.WeatherRepository>()));
   return getIt;
 }
 
-class _$AppModule extends _i9.AppModule {}
+class _$AppModule extends _i10.AppModule {}

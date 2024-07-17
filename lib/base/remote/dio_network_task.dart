@@ -75,11 +75,6 @@ class DioNetworkTask<T extends Object> extends NetworkTask<T> {
         ) ??
         NetworkFailure.api(message: error.response?.data);
 
-    switch (statusCode) {
-      case 401:
-        return Failure<T>(NetworkFailure.unAuthorized(message: errorMessage));
-      default:
-        return Failure<T>(errorMessage);
-    }
+    return Failure<T>(errorMessage);
   }
 }

@@ -156,17 +156,14 @@ void main() {
             units: units,
           )).thenThrow(dioError);
 
-      try {
-        await repository.getWeatherForecast(
-          lat: lat,
-          lon: lon,
-          exclude: exclude,
-          units: units,
-        );
-      } catch (error) {
-        expect(error, isA<NetworkFailure>());
-        expect((error as NetworkFailure).message, 'Invalid API key');
-      }
+      final error = await repository.getWeatherForecast(
+        lat: lat,
+        lon: lon,
+        exclude: exclude,
+        units: units,
+      );
+      expect(error, isA<Failure<WeatherForecast>>());
+      expect(error.errorOrNull?.message, 'Invalid API key');
     });
 
     test('should throw NetworkFailure.api on 404 error', () async {
@@ -186,17 +183,14 @@ void main() {
             units: units,
           )).thenThrow(dioError);
 
-      try {
-        await repository.getWeatherForecast(
-          lat: lat,
-          lon: lon,
-          exclude: exclude,
-          units: units,
-        );
-      } catch (error) {
-        expect(error, isA<NetworkFailure>());
-        expect((error as NetworkFailure).message, 'City not found');
-      }
+      final error = await repository.getWeatherForecast(
+        lat: lat,
+        lon: lon,
+        exclude: exclude,
+        units: units,
+      );
+      expect(error, isA<Failure<WeatherForecast>>());
+      expect(error.errorOrNull?.message, 'City not found');
     });
 
     test('should throw NetworkFailure.tooManyRequests on 429 error', () async {
@@ -217,17 +211,14 @@ void main() {
             units: units,
           )).thenThrow(dioError);
 
-      try {
-        await repository.getWeatherForecast(
-          lat: lat,
-          lon: lon,
-          exclude: exclude,
-          units: units,
-        );
-      } catch (error) {
-        expect(error, isA<NetworkFailure>());
-        expect((error as NetworkFailure).message, 'Too many requests');
-      }
+      final error = await repository.getWeatherForecast(
+        lat: lat,
+        lon: lon,
+        exclude: exclude,
+        units: units,
+      );
+      expect(error, isA<Failure<WeatherForecast>>());
+      expect(error.errorOrNull?.message, 'Too many requests');
     });
 
     test('should throw NetworkFailure.serverError on 500 error', () async {
@@ -248,17 +239,14 @@ void main() {
             units: units,
           )).thenThrow(dioError);
 
-      try {
-        await repository.getWeatherForecast(
-          lat: lat,
-          lon: lon,
-          exclude: exclude,
-          units: units,
-        );
-      } catch (error) {
-        expect(error, isA<NetworkFailure>());
-        expect((error as NetworkFailure).message, 'Internal server error');
-      }
+      final error = await repository.getWeatherForecast(
+        lat: lat,
+        lon: lon,
+        exclude: exclude,
+        units: units,
+      );
+      expect(error, isA<Failure<WeatherForecast>>());
+      expect(error.errorOrNull?.message, 'Internal server error');
     });
   });
 }
