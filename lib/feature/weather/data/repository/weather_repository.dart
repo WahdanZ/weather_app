@@ -18,8 +18,8 @@ class WeatherRepository {
   Future<CustomResult<WeatherForecast>> getWeatherForecast({
     required double lat,
     required double lon,
-    required String exclude,
     required String units,
+    String exclude = '',
   }) async {
     final task = DioNetworkTask(() async {
       final response = await _client.getOneCallWeather(
