@@ -67,7 +67,9 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
           final selectedDay = weatherForecast.daily[0];
 
           emit(WeatherLoaded(
-              selectedDay: selectedDay, weatherForecast: weatherForecast));
+              selectedDay: selectedDay,
+              weatherForecast: weatherForecast,
+              units: _currentUnits));
         },
         failure: (error) => emit(
           WeatherError(failure: error, units: _currentUnits),
@@ -83,12 +85,14 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   }
 
   void _onChangeUnits(ChangeUnits event, Emitter<WeatherState> emit) {
+    if (event.units == _currentUnits) return;
     _currentUnits = event.units;
     if (state is WeatherLoaded) {
       final loadedState = state as WeatherLoaded;
       final convertedForecast =
           _convertUnits(loadedState.weatherForecast, _currentUnits);
       emit(loadedState.copyWith(
+        selectedDay: convertedForecast.daily[0],
         weatherForecast: convertedForecast,
         units: _currentUnits,
       ));
