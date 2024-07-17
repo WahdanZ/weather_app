@@ -16,19 +16,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Install FVM
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/leoafarias/fvm/main/install.sh | bash
-          echo 'export PATH="$HOME/.pub-cache/bin:$PATH"' >> $GITHUB_ENV
+      - name: Setup Flutter Version Management CLI
+        uses: flutter-actions/setup-fvm@v1
 
-      - name: Setup FVM
-        run: fvm install
-
-      - name: Use Flutter with FVM
-        run: fvm use
-
+      - name: Install Flutter SDK
+        run: echo yes | fvm use 3.22.2
       - name: Install dependencies
         run: fvm flutter pub get
 
