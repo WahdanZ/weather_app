@@ -25,35 +25,6 @@ void main() {
       'test_api_key',
       NetworkTaskManager(),
     );
-
-    registerFallbackValue(const Success<WeatherForecast>(WeatherForecast(
-      latitude: 0.0,
-      longitude: 0.0,
-      timezone: '',
-      timezoneOffset: 0,
-      current: CurrentWeather(
-        temperature: 0.0,
-        humidity: 0,
-        pressure: 0,
-        windSpeed: 0.0,
-        weather: [],
-      ),
-      daily: [],
-    )));
-    registerFallbackValue(DioNetworkTask(() async => const WeatherForecast(
-          latitude: 0.0,
-          longitude: 0.0,
-          timezone: '',
-          timezoneOffset: 0,
-          current: CurrentWeather(
-            temperature: 0.0,
-            humidity: 0,
-            pressure: 0,
-            windSpeed: 0.0,
-            weather: [],
-          ),
-          daily: [],
-        )));
     // register OneCallResponse
     registerFallbackValue(OneCallResponse(
       lat: 0.0,
