@@ -11,8 +11,8 @@ import 'package:weather_app/feature/weather/presentation/page/weather_page.dart'
 import 'package:weather_app/feature/weather/presentation/widgets/unit_toggle.dart';
 import 'package:weather_app/feature/weather/presentation/widgets/weather_details.dart';
 
-import '../../../../../mock.dart';
-import '../../../../../test_injection.dart';
+import '../../../../mock.dart';
+import '../../../../test_injection.dart';
 
 void main() {
   late WeatherBloc mockWeatherBloc;
