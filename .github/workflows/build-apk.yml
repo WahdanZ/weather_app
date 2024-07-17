@@ -18,16 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up FVM
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/leoafarias/fvm/main/install.sh | bash
-          echo 'export PATH="$HOME/.pub-cache/bin:$PATH"' >> $GITHUB_ENV
-
-      - name: Install Flutter
-        run: fvm install
-
-      - name: Use Flutter version with FVM
-        run: fvm use
+      - name: Set up Flutter with FVM
+        uses: patrol-dev/flutter-fvm-config-action@v1
+        with:
+          version: '3.22.2'
 
       - name: Install dependencies
         run: fvm flutter pub get
