@@ -42,6 +42,10 @@ _i1.GetIt $initGetIt(
   gh.factory<_i3.LocationService>(() => _i3.LocationService());
   gh.factory<_i4.WeatherMapper>(() => _i4.WeatherMapper());
   gh.lazySingleton<_i5.NetworkTaskManager>(() => _i5.NetworkTaskManager());
+  gh.lazySingleton<String>(
+    () => appModule.apiKey,
+    instanceName: 'api_key',
+  );
   gh.lazySingleton<_i6.Dio>(
     () => appModule.dio,
     instanceName: 'dio_client',

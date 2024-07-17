@@ -6,7 +6,7 @@ import 'model/index.dart';
 
 part 'weather_api.g.dart';
 
-@RestApi(baseUrl: "http://api.openweathermap.org/data/2.5/")
+@RestApi(baseUrl: "http://api.openweathermap.org/data/3.0/")
 @injectable
 abstract class WeatherApiClient {
   @factoryMethod

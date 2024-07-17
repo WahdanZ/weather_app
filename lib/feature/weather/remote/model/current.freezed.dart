@@ -24,6 +24,7 @@ mixin _$Current {
   int get humidity => throw _privateConstructorUsedError;
   int get pressure => throw _privateConstructorUsedError;
   List<WeatherModel> get weather => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wind_speed')
   double get windSpeed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,7 +42,7 @@ abstract class $CurrentCopyWith<$Res> {
       int humidity,
       int pressure,
       List<WeatherModel> weather,
-      double windSpeed});
+      @JsonKey(name: 'wind_speed') double windSpeed});
 }
 
 /// @nodoc
@@ -100,7 +101,7 @@ abstract class _$$CurrentImplCopyWith<$Res> implements $CurrentCopyWith<$Res> {
       int humidity,
       int pressure,
       List<WeatherModel> weather,
-      double windSpeed});
+      @JsonKey(name: 'wind_speed') double windSpeed});
 }
 
 /// @nodoc
@@ -153,7 +154,7 @@ class _$CurrentImpl implements _Current {
       required this.humidity,
       required this.pressure,
       required final List<WeatherModel> weather,
-      required this.windSpeed})
+      @JsonKey(name: 'wind_speed') required this.windSpeed})
       : _weather = weather;
 
   factory _$CurrentImpl.fromJson(Map<String, dynamic> json) =>
@@ -174,6 +175,7 @@ class _$CurrentImpl implements _Current {
   }
 
   @override
+  @JsonKey(name: 'wind_speed')
   final double windSpeed;
 
   @override
@@ -217,11 +219,12 @@ class _$CurrentImpl implements _Current {
 
 abstract class _Current implements Current {
   factory _Current(
-      {required final double temp,
-      required final int humidity,
-      required final int pressure,
-      required final List<WeatherModel> weather,
-      required final double windSpeed}) = _$CurrentImpl;
+          {required final double temp,
+          required final int humidity,
+          required final int pressure,
+          required final List<WeatherModel> weather,
+          @JsonKey(name: 'wind_speed') required final double windSpeed}) =
+      _$CurrentImpl;
 
   factory _Current.fromJson(Map<String, dynamic> json) = _$CurrentImpl.fromJson;
 
@@ -234,6 +237,7 @@ abstract class _Current implements Current {
   @override
   List<WeatherModel> get weather;
   @override
+  @JsonKey(name: 'wind_speed')
   double get windSpeed;
   @override
   @JsonKey(ignore: true)

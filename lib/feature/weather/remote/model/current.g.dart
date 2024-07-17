@@ -14,7 +14,7 @@ _$CurrentImpl _$$CurrentImplFromJson(Map<String, dynamic> json) =>
       weather: (json['weather'] as List<dynamic>)
           .map((e) => WeatherModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      windSpeed: (json['windSpeed'] as num).toDouble(),
+      windSpeed: (json['wind_speed'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$CurrentImplToJson(_$CurrentImpl instance) =>
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$CurrentImplToJson(_$CurrentImpl instance) =>
       'humidity': instance.humidity,
       'pressure': instance.pressure,
       'weather': instance.weather,
-      'windSpeed': instance.windSpeed,
+      'wind_speed': instance.windSpeed,
     };
