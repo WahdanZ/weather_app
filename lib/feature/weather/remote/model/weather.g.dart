@@ -6,13 +6,13 @@ part of 'weather.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$WeatherImpl _$$WeatherImplFromJson(Map<String, dynamic> json) =>
-    _$WeatherImpl(
+_$WeatherModelImpl _$$WeatherModelImplFromJson(Map<String, dynamic> json) =>
+    _$WeatherModelImpl(
       description: json['description'] as String,
       icon: json['icon'] as String,
     );
 
-Map<String, dynamic> _$$WeatherImplToJson(_$WeatherImpl instance) =>
+Map<String, dynamic> _$$WeatherModelImplToJson(_$WeatherModelImpl instance) =>
     <String, dynamic>{
       'description': instance.description,
       'icon': instance.icon,

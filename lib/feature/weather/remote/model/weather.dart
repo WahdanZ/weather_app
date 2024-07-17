@@ -4,12 +4,12 @@ part 'weather.freezed.dart';
 part 'weather.g.dart';
 
 @freezed
-class Weather with _$Weather {
-  factory Weather({
+class WeatherModel with _$WeatherModel {
+  factory WeatherModel({
     required String description,
     required String icon,
-  }) = _Weather;
+  }) = _WeatherModel;
 
-  factory Weather.fromJson(Map<String, dynamic> json) =>
-      _$WeatherFromJson(json);
+  factory WeatherModel.fromJson(Map<String, dynamic> json) =>
+      _$WeatherModelFromJson(json);
 }

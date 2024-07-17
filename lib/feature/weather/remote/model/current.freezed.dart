@@ -23,7 +23,7 @@ mixin _$Current {
   double get temp => throw _privateConstructorUsedError;
   int get humidity => throw _privateConstructorUsedError;
   int get pressure => throw _privateConstructorUsedError;
-  List<Weather> get weather => throw _privateConstructorUsedError;
+  List<WeatherModel> get weather => throw _privateConstructorUsedError;
   double get windSpeed => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $CurrentCopyWith<$Res> {
       {double temp,
       int humidity,
       int pressure,
-      List<Weather> weather,
+      List<WeatherModel> weather,
       double windSpeed});
 }
 
@@ -79,7 +79,7 @@ class _$CurrentCopyWithImpl<$Res, $Val extends Current>
       weather: null == weather
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>,
+              as List<WeatherModel>,
       windSpeed: null == windSpeed
           ? _value.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -99,7 +99,7 @@ abstract class _$$CurrentImplCopyWith<$Res> implements $CurrentCopyWith<$Res> {
       {double temp,
       int humidity,
       int pressure,
-      List<Weather> weather,
+      List<WeatherModel> weather,
       double windSpeed});
 }
 
@@ -136,7 +136,7 @@ class __$$CurrentImplCopyWithImpl<$Res>
       weather: null == weather
           ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>,
+              as List<WeatherModel>,
       windSpeed: null == windSpeed
           ? _value.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class _$CurrentImpl implements _Current {
       {required this.temp,
       required this.humidity,
       required this.pressure,
-      required final List<Weather> weather,
+      required final List<WeatherModel> weather,
       required this.windSpeed})
       : _weather = weather;
 
@@ -165,9 +165,9 @@ class _$CurrentImpl implements _Current {
   final int humidity;
   @override
   final int pressure;
-  final List<Weather> _weather;
+  final List<WeatherModel> _weather;
   @override
-  List<Weather> get weather {
+  List<WeatherModel> get weather {
     if (_weather is EqualUnmodifiableListView) return _weather;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_weather);
@@ -220,7 +220,7 @@ abstract class _Current implements Current {
       {required final double temp,
       required final int humidity,
       required final int pressure,
-      required final List<Weather> weather,
+      required final List<WeatherModel> weather,
       required final double windSpeed}) = _$CurrentImpl;
 
   factory _Current.fromJson(Map<String, dynamic> json) = _$CurrentImpl.fromJson;
@@ -232,7 +232,7 @@ abstract class _Current implements Current {
   @override
   int get pressure;
   @override
-  List<Weather> get weather;
+  List<WeatherModel> get weather;
   @override
   double get windSpeed;
   @override

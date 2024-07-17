@@ -11,7 +11,7 @@ _$DailyImpl _$$DailyImplFromJson(Map<String, dynamic> json) => _$DailyImpl(
       humidity: (json['humidity'] as num).toInt(),
       pressure: (json['pressure'] as num).toInt(),
       weather: (json['weather'] as List<dynamic>)
-          .map((e) => Weather.fromJson(e as Map<String, dynamic>))
+          .map((e) => WeatherModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       windSpeed: (json['wind_speed'] as num).toDouble(),
       dt: (json['dt'] as num).toInt(),

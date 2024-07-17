@@ -12,7 +12,7 @@ class Daily with _$Daily {
     required Temp temp,
     required int humidity,
     required int pressure,
-    required List<Weather> weather,
+    required List<WeatherModel> weather,
     @JsonKey(name: 'wind_speed') required double windSpeed,
     required int dt,
   }) = _Daily;

@@ -12,7 +12,7 @@ _$CurrentImpl _$$CurrentImplFromJson(Map<String, dynamic> json) =>
       humidity: (json['humidity'] as num).toInt(),
       pressure: (json['pressure'] as num).toInt(),
       weather: (json['weather'] as List<dynamic>)
-          .map((e) => Weather.fromJson(e as Map<String, dynamic>))
+          .map((e) => WeatherModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       windSpeed: (json['windSpeed'] as num).toDouble(),
     );

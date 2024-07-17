@@ -25,6 +25,22 @@ sealed class CustomResult<T extends Object> {
         return failure(failureResult.error);
     }
   }
+
+  /// get value or error
+  T? get valueOrNull {
+    if (this is Success<T>) {
+      return (this as Success<T>).result;
+    }
+    return null;
+  }
+
+  /// get error or null
+  NetworkFailure? get errorOrNull {
+    if (this is Failure<T>) {
+      return (this as Failure<T>).error;
+    }
+    return null;
+  }
 }
 
 /// A class representing a successful result.

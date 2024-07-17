@@ -11,7 +11,7 @@ class Current with _$Current {
     required double temp,
     required int humidity,
     required int pressure,
-    required List<Weather> weather,
+    required List<WeatherModel> weather,
     required double windSpeed,
   }) = _Current;
 

@@ -23,7 +23,7 @@ mixin _$Daily {
   Temp get temp => throw _privateConstructorUsedError;
   int get humidity => throw _privateConstructorUsedError;
   int get pressure => throw _privateConstructorUsedError;
-  List<Weather> get weather => throw _privateConstructorUsedError;
+  List<WeatherModel> get weather => throw _privateConstructorUsedError;
   @JsonKey(name: 'wind_speed')
   double get windSpeed => throw _privateConstructorUsedError;
   int get dt => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $DailyCopyWith<$Res> {
       {Temp temp,
       int humidity,
       int pressure,
-      List<Weather> weather,
+      List<WeatherModel> weather,
       @JsonKey(name: 'wind_speed') double windSpeed,
       int dt});
 
@@ -85,7 +85,7 @@ class _$DailyCopyWithImpl<$Res, $Val extends Daily>
       weather: null == weather
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>,
+              as List<WeatherModel>,
       windSpeed: null == windSpeed
           ? _value.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -117,7 +117,7 @@ abstract class _$$DailyImplCopyWith<$Res> implements $DailyCopyWith<$Res> {
       {Temp temp,
       int humidity,
       int pressure,
-      List<Weather> weather,
+      List<WeatherModel> weather,
       @JsonKey(name: 'wind_speed') double windSpeed,
       int dt});
 
@@ -159,7 +159,7 @@ class __$$DailyImplCopyWithImpl<$Res>
       weather: null == weather
           ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>,
+              as List<WeatherModel>,
       windSpeed: null == windSpeed
           ? _value.windSpeed
           : windSpeed // ignore: cast_nullable_to_non_nullable
@@ -179,7 +179,7 @@ class _$DailyImpl implements _Daily {
       {required this.temp,
       required this.humidity,
       required this.pressure,
-      required final List<Weather> weather,
+      required final List<WeatherModel> weather,
       @JsonKey(name: 'wind_speed') required this.windSpeed,
       required this.dt})
       : _weather = weather;
@@ -193,9 +193,9 @@ class _$DailyImpl implements _Daily {
   final int humidity;
   @override
   final int pressure;
-  final List<Weather> _weather;
+  final List<WeatherModel> _weather;
   @override
-  List<Weather> get weather {
+  List<WeatherModel> get weather {
     if (_weather is EqualUnmodifiableListView) return _weather;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_weather);
@@ -252,7 +252,7 @@ abstract class _Daily implements Daily {
       {required final Temp temp,
       required final int humidity,
       required final int pressure,
-      required final List<Weather> weather,
+      required final List<WeatherModel> weather,
       @JsonKey(name: 'wind_speed') required final double windSpeed,
       required final int dt}) = _$DailyImpl;
 
@@ -265,7 +265,7 @@ abstract class _Daily implements Daily {
   @override
   int get pressure;
   @override
-  List<Weather> get weather;
+  List<WeatherModel> get weather;
   @override
   @JsonKey(name: 'wind_speed')
   double get windSpeed;
