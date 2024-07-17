@@ -6,6 +6,7 @@ import 'package:weather_app/feature/weather/data/mapper/weather_mapper.dart';
 import 'package:weather_app/feature/weather/data/repository/weather_repository.dart';
 import 'package:weather_app/feature/weather/domain/usecases/get_current_location_usecase.dart';
 import 'package:weather_app/feature/weather/domain/usecases/get_weather_forecast.dart';
+import 'package:weather_app/feature/weather/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/feature/weather/remote/weather_api.dart';
 
 @injectable
@@ -33,3 +34,12 @@ class MockGetWeatherForecastUseCase extends Mock
 @injectable
 class MockGetCurrentLocationUseCase extends Mock
     implements GetCurrentLocationUseCase {}
+
+@LazySingleton(as: WeatherBloc)
+class MockWeatherBloc extends Mock implements WeatherBloc {}
+
+@injectable
+class FakeWeatherEvent extends Fake implements WeatherEvent {}
+
+@injectable
+class FakeWeatherState extends Fake implements WeatherState {}

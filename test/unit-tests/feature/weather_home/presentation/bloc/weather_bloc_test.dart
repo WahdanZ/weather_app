@@ -181,7 +181,12 @@ void main() {
           units: WeatherUnits.metric,
         ),
         WeatherLoaded(
-          selectedDay: weatherForecast.daily.first,
+          selectedDay: weatherForecast.daily.first.copyWith(
+            dayTemp: weatherForecast.daily.first.dayTemp.toFahrenheit(),
+            minTemp: weatherForecast.daily.first.minTemp.toFahrenheit(),
+            maxTemp: weatherForecast.daily.first.maxTemp.toFahrenheit(),
+            windSpeed: weatherForecast.daily.first.windSpeed.toMph(),
+          ),
           weatherForecast: weatherForecast.copyWith(
             current: weatherForecast.current.copyWith(
               temperature: weatherForecast.current.temperature.toFahrenheit(),

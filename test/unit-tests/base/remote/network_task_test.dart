@@ -117,7 +117,7 @@ void main() {
       expect(
           result,
           equals(const Failure<String>(
-              NetworkFailure.unAuthorized(message: NetworkFailure.api()))));
+              NetworkFailure.unAuthorized(message: null))));
     });
 
     // Test case for handling unknown error

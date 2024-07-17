@@ -9,6 +9,7 @@ final GetIt getItX = GetIt.instance;
     generateForDir: ['test'], rootDir: 'test', preferRelativeImports: true)
 void configureTestDependencies() => getItX.init();
 
+resetGetIt() => getItX.reset();
 T injectMock<T extends Object>({String? instanceName}) {
   return getItX.get<T>(instanceName: instanceName);
 }
