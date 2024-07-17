@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:weather_app/base/index.dart';
-import 'package:weather_app/base/remote/dio_network_task.dart';
 
 // Mock class for the FakeTask
 class FakeTask extends Mock {
@@ -16,8 +15,7 @@ void main() {
   });
 
   group("Network Task Test", () {
-
-     test('Execute task using isolate', () async {
+    test('Execute task using isolate', () async {
       final fakeTask = FakeTask();
 
       // Mocking the getFakeData method to return "Isolate Task"
@@ -119,7 +117,7 @@ void main() {
       expect(
           result,
           equals(const Failure<String>(
-              NetworkFailure.unAuthorized(message: NetworkFailure.api()))));
+              NetworkFailure.unAuthorized(message: null))));
     });
 
     // Test case for handling unknown error

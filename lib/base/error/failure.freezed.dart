@@ -18,51 +18,69 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$NetworkFailure {
   dynamic get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
     required TResult Function(dynamic message) api,
     required TResult Function(dynamic message) unAuthorized,
     required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
     required TResult Function(dynamic message) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
     TResult? Function(dynamic message)? api,
     TResult? Function(dynamic message)? unAuthorized,
     TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
     TResult? Function(dynamic message)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
     TResult Function(dynamic message)? api,
     TResult Function(dynamic message)? unAuthorized,
     TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
     TResult Function(dynamic message)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
     required TResult Function(_ApiFailure value) api,
     required TResult Function(_UnAuthorizedFailure value) unAuthorized,
     required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
     required TResult Function(_UnknownFailure value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
     TResult? Function(_ApiFailure value)? api,
     TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
     TResult? Function(_UnknownFailure value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
     TResult Function(_ApiFailure value)? api,
     TResult Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
     TResult Function(_UnknownFailure value)? unknown,
     required TResult orElse(),
   }) =>
@@ -104,6 +122,184 @@ class _$NetworkFailureCopyWithImpl<$Res, $Val extends NetworkFailure>
               as dynamic,
     ) as $Val);
   }
+}
+
+/// @nodoc
+abstract class _$$ErrorFailureImplCopyWith<$Res>
+    implements $NetworkFailureCopyWith<$Res> {
+  factory _$$ErrorFailureImplCopyWith(
+          _$ErrorFailureImpl value, $Res Function(_$ErrorFailureImpl) then) =
+      __$$ErrorFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String code, dynamic message});
+}
+
+/// @nodoc
+class __$$ErrorFailureImplCopyWithImpl<$Res>
+    extends _$NetworkFailureCopyWithImpl<$Res, _$ErrorFailureImpl>
+    implements _$$ErrorFailureImplCopyWith<$Res> {
+  __$$ErrorFailureImplCopyWithImpl(
+      _$ErrorFailureImpl _value, $Res Function(_$ErrorFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = null,
+    Object? message = freezed,
+  }) {
+    return _then(_$ErrorFailureImpl(
+      null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorFailureImpl implements _ErrorFailure {
+  const _$ErrorFailureImpl(this.code, {this.message});
+
+  @override
+  final String code;
+  @override
+  final dynamic message;
+
+  @override
+  String toString() {
+    return 'NetworkFailure(code: $code, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorFailureImpl &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, code, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorFailureImplCopyWith<_$ErrorFailureImpl> get copyWith =>
+      __$$ErrorFailureImplCopyWithImpl<_$ErrorFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
+    required TResult Function(dynamic message) api,
+    required TResult Function(dynamic message) unAuthorized,
+    required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
+    required TResult Function(dynamic message) unknown,
+  }) {
+    return $default(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
+    TResult? Function(dynamic message)? api,
+    TResult? Function(dynamic message)? unAuthorized,
+    TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
+    TResult? Function(dynamic message)? unknown,
+  }) {
+    return $default?.call(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
+    TResult Function(dynamic message)? api,
+    TResult Function(dynamic message)? unAuthorized,
+    TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
+    TResult Function(dynamic message)? unknown,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(code, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
+    required TResult Function(_ApiFailure value) api,
+    required TResult Function(_UnAuthorizedFailure value) unAuthorized,
+    required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
+    required TResult Function(_UnknownFailure value) unknown,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
+    TResult? Function(_ApiFailure value)? api,
+    TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
+    TResult? Function(_UnknownFailure value)? unknown,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
+    TResult Function(_ApiFailure value)? api,
+    TResult Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
+    TResult Function(_UnknownFailure value)? unknown,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorFailure implements NetworkFailure {
+  const factory _ErrorFailure(final String code, {final dynamic message}) =
+      _$ErrorFailureImpl;
+
+  String get code;
+  @override
+  dynamic get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$ErrorFailureImplCopyWith<_$ErrorFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -172,10 +368,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
     required TResult Function(dynamic message) api,
     required TResult Function(dynamic message) unAuthorized,
     required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
     required TResult Function(dynamic message) unknown,
   }) {
     return api(message);
@@ -183,10 +382,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
     TResult? Function(dynamic message)? api,
     TResult? Function(dynamic message)? unAuthorized,
     TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
     TResult? Function(dynamic message)? unknown,
   }) {
     return api?.call(message);
@@ -194,10 +396,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
     TResult Function(dynamic message)? api,
     TResult Function(dynamic message)? unAuthorized,
     TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
     TResult Function(dynamic message)? unknown,
     required TResult orElse(),
   }) {
@@ -209,10 +414,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
     required TResult Function(_ApiFailure value) api,
     required TResult Function(_UnAuthorizedFailure value) unAuthorized,
     required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
     required TResult Function(_UnknownFailure value) unknown,
   }) {
     return api(this);
@@ -220,10 +428,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
     TResult? Function(_ApiFailure value)? api,
     TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
     TResult? Function(_UnknownFailure value)? unknown,
   }) {
     return api?.call(this);
@@ -231,10 +442,13 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
     TResult Function(_ApiFailure value)? api,
     TResult Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
     TResult Function(_UnknownFailure value)? unknown,
     required TResult orElse(),
   }) {
@@ -323,10 +537,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
     required TResult Function(dynamic message) api,
     required TResult Function(dynamic message) unAuthorized,
     required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
     required TResult Function(dynamic message) unknown,
   }) {
     return unAuthorized(message);
@@ -334,10 +551,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
     TResult? Function(dynamic message)? api,
     TResult? Function(dynamic message)? unAuthorized,
     TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
     TResult? Function(dynamic message)? unknown,
   }) {
     return unAuthorized?.call(message);
@@ -345,10 +565,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
     TResult Function(dynamic message)? api,
     TResult Function(dynamic message)? unAuthorized,
     TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
     TResult Function(dynamic message)? unknown,
     required TResult orElse(),
   }) {
@@ -360,10 +583,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
     required TResult Function(_ApiFailure value) api,
     required TResult Function(_UnAuthorizedFailure value) unAuthorized,
     required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
     required TResult Function(_UnknownFailure value) unknown,
   }) {
     return unAuthorized(this);
@@ -371,10 +597,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
     TResult? Function(_ApiFailure value)? api,
     TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
     TResult? Function(_UnknownFailure value)? unknown,
   }) {
     return unAuthorized?.call(this);
@@ -382,10 +611,13 @@ class _$UnAuthorizedFailureImpl implements _UnAuthorizedFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
     TResult Function(_ApiFailure value)? api,
     TResult Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
     TResult Function(_UnknownFailure value)? unknown,
     required TResult orElse(),
   }) {
@@ -475,10 +707,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
     required TResult Function(dynamic message) api,
     required TResult Function(dynamic message) unAuthorized,
     required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
     required TResult Function(dynamic message) unknown,
   }) {
     return noInternet(message);
@@ -486,10 +721,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
     TResult? Function(dynamic message)? api,
     TResult? Function(dynamic message)? unAuthorized,
     TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
     TResult? Function(dynamic message)? unknown,
   }) {
     return noInternet?.call(message);
@@ -497,10 +735,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
     TResult Function(dynamic message)? api,
     TResult Function(dynamic message)? unAuthorized,
     TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
     TResult Function(dynamic message)? unknown,
     required TResult orElse(),
   }) {
@@ -512,10 +753,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
     required TResult Function(_ApiFailure value) api,
     required TResult Function(_UnAuthorizedFailure value) unAuthorized,
     required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
     required TResult Function(_UnknownFailure value) unknown,
   }) {
     return noInternet(this);
@@ -523,10 +767,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
     TResult? Function(_ApiFailure value)? api,
     TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
     TResult? Function(_UnknownFailure value)? unknown,
   }) {
     return noInternet?.call(this);
@@ -534,10 +781,13 @@ class _$NoInternetFailureImpl implements _NoInternetFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
     TResult Function(_ApiFailure value)? api,
     TResult Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
     TResult Function(_UnknownFailure value)? unknown,
     required TResult orElse(),
   }) {
@@ -557,6 +807,348 @@ abstract class _NoInternetFailure implements NetworkFailure {
   @override
   @JsonKey(ignore: true)
   _$$NoInternetFailureImplCopyWith<_$NoInternetFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TooManyRequestsFailureImplCopyWith<$Res>
+    implements $NetworkFailureCopyWith<$Res> {
+  factory _$$TooManyRequestsFailureImplCopyWith(
+          _$TooManyRequestsFailureImpl value,
+          $Res Function(_$TooManyRequestsFailureImpl) then) =
+      __$$TooManyRequestsFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({dynamic message});
+}
+
+/// @nodoc
+class __$$TooManyRequestsFailureImplCopyWithImpl<$Res>
+    extends _$NetworkFailureCopyWithImpl<$Res, _$TooManyRequestsFailureImpl>
+    implements _$$TooManyRequestsFailureImplCopyWith<$Res> {
+  __$$TooManyRequestsFailureImplCopyWithImpl(
+      _$TooManyRequestsFailureImpl _value,
+      $Res Function(_$TooManyRequestsFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$TooManyRequestsFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TooManyRequestsFailureImpl implements _TooManyRequestsFailure {
+  const _$TooManyRequestsFailureImpl({this.message});
+
+  @override
+  final dynamic message;
+
+  @override
+  String toString() {
+    return 'NetworkFailure.tooManyRequests(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TooManyRequestsFailureImpl &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TooManyRequestsFailureImplCopyWith<_$TooManyRequestsFailureImpl>
+      get copyWith => __$$TooManyRequestsFailureImplCopyWithImpl<
+          _$TooManyRequestsFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
+    required TResult Function(dynamic message) api,
+    required TResult Function(dynamic message) unAuthorized,
+    required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
+    required TResult Function(dynamic message) unknown,
+  }) {
+    return tooManyRequests(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
+    TResult? Function(dynamic message)? api,
+    TResult? Function(dynamic message)? unAuthorized,
+    TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
+    TResult? Function(dynamic message)? unknown,
+  }) {
+    return tooManyRequests?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
+    TResult Function(dynamic message)? api,
+    TResult Function(dynamic message)? unAuthorized,
+    TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
+    TResult Function(dynamic message)? unknown,
+    required TResult orElse(),
+  }) {
+    if (tooManyRequests != null) {
+      return tooManyRequests(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
+    required TResult Function(_ApiFailure value) api,
+    required TResult Function(_UnAuthorizedFailure value) unAuthorized,
+    required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
+    required TResult Function(_UnknownFailure value) unknown,
+  }) {
+    return tooManyRequests(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
+    TResult? Function(_ApiFailure value)? api,
+    TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
+    TResult? Function(_UnknownFailure value)? unknown,
+  }) {
+    return tooManyRequests?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
+    TResult Function(_ApiFailure value)? api,
+    TResult Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
+    TResult Function(_UnknownFailure value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (tooManyRequests != null) {
+      return tooManyRequests(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TooManyRequestsFailure implements NetworkFailure {
+  const factory _TooManyRequestsFailure({final dynamic message}) =
+      _$TooManyRequestsFailureImpl;
+
+  @override
+  dynamic get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$TooManyRequestsFailureImplCopyWith<_$TooManyRequestsFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ServerErrorFailureImplCopyWith<$Res>
+    implements $NetworkFailureCopyWith<$Res> {
+  factory _$$ServerErrorFailureImplCopyWith(_$ServerErrorFailureImpl value,
+          $Res Function(_$ServerErrorFailureImpl) then) =
+      __$$ServerErrorFailureImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({dynamic message});
+}
+
+/// @nodoc
+class __$$ServerErrorFailureImplCopyWithImpl<$Res>
+    extends _$NetworkFailureCopyWithImpl<$Res, _$ServerErrorFailureImpl>
+    implements _$$ServerErrorFailureImplCopyWith<$Res> {
+  __$$ServerErrorFailureImplCopyWithImpl(_$ServerErrorFailureImpl _value,
+      $Res Function(_$ServerErrorFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ServerErrorFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ServerErrorFailureImpl implements _ServerErrorFailure {
+  const _$ServerErrorFailureImpl({this.message});
+
+  @override
+  final dynamic message;
+
+  @override
+  String toString() {
+    return 'NetworkFailure.serverError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ServerErrorFailureImpl &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ServerErrorFailureImplCopyWith<_$ServerErrorFailureImpl> get copyWith =>
+      __$$ServerErrorFailureImplCopyWithImpl<_$ServerErrorFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
+    required TResult Function(dynamic message) api,
+    required TResult Function(dynamic message) unAuthorized,
+    required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
+    required TResult Function(dynamic message) unknown,
+  }) {
+    return serverError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
+    TResult? Function(dynamic message)? api,
+    TResult? Function(dynamic message)? unAuthorized,
+    TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
+    TResult? Function(dynamic message)? unknown,
+  }) {
+    return serverError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
+    TResult Function(dynamic message)? api,
+    TResult Function(dynamic message)? unAuthorized,
+    TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
+    TResult Function(dynamic message)? unknown,
+    required TResult orElse(),
+  }) {
+    if (serverError != null) {
+      return serverError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
+    required TResult Function(_ApiFailure value) api,
+    required TResult Function(_UnAuthorizedFailure value) unAuthorized,
+    required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
+    required TResult Function(_UnknownFailure value) unknown,
+  }) {
+    return serverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
+    TResult? Function(_ApiFailure value)? api,
+    TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
+    TResult? Function(_UnknownFailure value)? unknown,
+  }) {
+    return serverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
+    TResult Function(_ApiFailure value)? api,
+    TResult Function(_UnAuthorizedFailure value)? unAuthorized,
+    TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
+    TResult Function(_UnknownFailure value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (serverError != null) {
+      return serverError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ServerErrorFailure implements NetworkFailure {
+  const factory _ServerErrorFailure({final dynamic message}) =
+      _$ServerErrorFailureImpl;
+
+  @override
+  dynamic get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$ServerErrorFailureImplCopyWith<_$ServerErrorFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -627,10 +1219,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(String code, dynamic message) $default, {
     required TResult Function(dynamic message) api,
     required TResult Function(dynamic message) unAuthorized,
     required TResult Function(dynamic message) noInternet,
+    required TResult Function(dynamic message) tooManyRequests,
+    required TResult Function(dynamic message) serverError,
     required TResult Function(dynamic message) unknown,
   }) {
     return unknown(message);
@@ -638,10 +1233,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String code, dynamic message)? $default, {
     TResult? Function(dynamic message)? api,
     TResult? Function(dynamic message)? unAuthorized,
     TResult? Function(dynamic message)? noInternet,
+    TResult? Function(dynamic message)? tooManyRequests,
+    TResult? Function(dynamic message)? serverError,
     TResult? Function(dynamic message)? unknown,
   }) {
     return unknown?.call(message);
@@ -649,10 +1247,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String code, dynamic message)? $default, {
     TResult Function(dynamic message)? api,
     TResult Function(dynamic message)? unAuthorized,
     TResult Function(dynamic message)? noInternet,
+    TResult Function(dynamic message)? tooManyRequests,
+    TResult Function(dynamic message)? serverError,
     TResult Function(dynamic message)? unknown,
     required TResult orElse(),
   }) {
@@ -664,10 +1265,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_ErrorFailure value) $default, {
     required TResult Function(_ApiFailure value) api,
     required TResult Function(_UnAuthorizedFailure value) unAuthorized,
     required TResult Function(_NoInternetFailure value) noInternet,
+    required TResult Function(_TooManyRequestsFailure value) tooManyRequests,
+    required TResult Function(_ServerErrorFailure value) serverError,
     required TResult Function(_UnknownFailure value) unknown,
   }) {
     return unknown(this);
@@ -675,10 +1279,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ErrorFailure value)? $default, {
     TResult? Function(_ApiFailure value)? api,
     TResult? Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult? Function(_NoInternetFailure value)? noInternet,
+    TResult? Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult? Function(_ServerErrorFailure value)? serverError,
     TResult? Function(_UnknownFailure value)? unknown,
   }) {
     return unknown?.call(this);
@@ -686,10 +1293,13 @@ class _$UnknownFailureImpl implements _UnknownFailure {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ErrorFailure value)? $default, {
     TResult Function(_ApiFailure value)? api,
     TResult Function(_UnAuthorizedFailure value)? unAuthorized,
     TResult Function(_NoInternetFailure value)? noInternet,
+    TResult Function(_TooManyRequestsFailure value)? tooManyRequests,
+    TResult Function(_ServerErrorFailure value)? serverError,
     TResult Function(_UnknownFailure value)? unknown,
     required TResult orElse(),
   }) {
