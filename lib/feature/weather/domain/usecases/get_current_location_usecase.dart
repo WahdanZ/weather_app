@@ -9,6 +9,6 @@ class GetCurrentLocationUseCase extends UseCase<Location, Any> {
 
   @override
   Future<Location> buildUseCase(Any params) async {
-    return await locationService.getLocation();
+    return await locationService.getCurrentLocation();
   }
 }
