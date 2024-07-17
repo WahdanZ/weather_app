@@ -9,6 +9,13 @@ abstract class AppModule {
   @dev
   String get baseUrl =>
       const String.fromEnvironment('base_url', defaultValue: "");
+
+  @LazySingleton()
+  @Named('api_key')
+  @prod
+  @dev
+  String get apiKey => const String.fromEnvironment('api_key',
+      defaultValue: "fb31a9a89bccf5418982b8b879f2fab1");
   @LazySingleton()
   @Named('dio_client')
   Dio get dio =>

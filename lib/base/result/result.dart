@@ -41,6 +41,10 @@ sealed class CustomResult<T extends Object> {
     }
     return null;
   }
+
+  static CustomResult<T> success<T extends Object>(T result) => Success(result);
+  static CustomResult<T> failure<T extends Object>(NetworkFailure error) =>
+      Failure(error);
 }
 
 /// A class representing a successful result.
