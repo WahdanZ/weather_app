@@ -12,20 +12,12 @@ class GetWeatherForecastUseCase
   @override
   Future<CustomResult<WeatherForecast>> buildUseCase(
       GetWeatherForecastParams params) async {
-    try {
-      final result = await repository.getWeatherForecast(
-        lat: params.lat,
-        lon: params.lon,
-        exclude: params.exclude,
-        units: params.units,
-      );
-      return result;
-    } catch (error) {
-      if (error is NetworkFailure) {
-        return Failure(error);
-      }
-      return const Failure(NetworkFailure.unknown());
-    }
+    return await repository.getWeatherForecast(
+      lat: params.lat,
+      lon: params.lon,
+      exclude: params.exclude,
+      units: params.units,
+    );
   }
 }
 
