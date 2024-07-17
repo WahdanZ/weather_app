@@ -12,7 +12,7 @@ abstract class AppModule {
 
   @LazySingleton()
   @Named('api_key')
-  String get apiKey => const String.fromEnvironment('api_key',
+  String get apiKey => const String.fromEnvironment('OPENWEATHERMAP_API_KEY',
       defaultValue: "fb31a9a89bccf5418982b8b879f2fab1");
   @LazySingleton()
   @Named('dio_client')

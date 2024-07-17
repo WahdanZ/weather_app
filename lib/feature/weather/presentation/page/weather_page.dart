@@ -14,51 +14,53 @@ class WeatherPage extends StatelessWidget {
         final weatherBloc = inject<WeatherBloc>();
         return weatherBloc..add(const FetchWeather());
       },
-      child: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.blue.shade700,
-                Colors.blue.shade300,
-              ],
+      child: SafeArea(
+        child: Scaffold(
+          body: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.blue.shade700,
+                  Colors.blue.shade300,
+                ],
+              ),
             ),
-          ),
-          child: BlocBuilder<WeatherBloc, WeatherState>(
-            builder: (context, state) {
-              return RefreshIndicator(
-                onRefresh: () => _refreshWeather(context, state),
-                child: state.map(
-                  initial: (_) =>
-                      const Center(child: Text('Please Select a Location')),
-                  loading: (_) =>
-                      const Center(child: CircularProgressIndicator()),
-                  loaded: (loadedState) => WeatherContent(
-                    selectedDay: loadedState.selectedDay,
-                    weatherForecast: loadedState.weatherForecast,
-                    currentUnit: loadedState.units,
-                  ),
-                  error: (errorState) => Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Error: ${errorState.failure.message}'),
-                        ElevatedButton(
-                          onPressed: () {
-                            context
-                                .read<WeatherBloc>()
-                                .add(const FetchWeather());
-                          },
-                          child: const Text('Retry'),
-                        ),
-                      ],
+            child: BlocBuilder<WeatherBloc, WeatherState>(
+              builder: (context, state) {
+                return RefreshIndicator(
+                  onRefresh: () => _refreshWeather(context, state),
+                  child: state.map(
+                    initial: (_) =>
+                        const Center(child: Text('Please Select a Location')),
+                    loading: (_) =>
+                        const Center(child: CircularProgressIndicator()),
+                    loaded: (loadedState) => WeatherContent(
+                      selectedDay: loadedState.selectedDay,
+                      weatherForecast: loadedState.weatherForecast,
+                      currentUnit: loadedState.units,
+                    ),
+                    error: (errorState) => Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Error: ${errorState.failure.message}'),
+                          ElevatedButton(
+                            onPressed: () {
+                              context
+                                  .read<WeatherBloc>()
+                                  .add(const FetchWeather());
+                            },
+                            child: const Text('Retry'),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       ),
