@@ -27,7 +27,6 @@ The Weather App is a Flutter application that provides detailed weather forecast
 <p align="center">
     <img src="https://github.com/WahdanZ/weather_app/blob/main/screenshots/Screenshot1.png" width="300" alt="Home Screen(Portrait)">
     <img src="https://github.com/WahdanZ/weather_app/blob/main/screenshots/Screenshot2.png" width="300" alt="Home Screen(Landscape)">
-/p>
 
 ## Installation
 
