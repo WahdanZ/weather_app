@@ -69,7 +69,6 @@ The Weather App is a Flutter application that provides detailed weather forecast
     fvm flutter run
     ```
 
-
 ## Testing
 
 ### Unit Tests
