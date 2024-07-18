@@ -65,6 +65,7 @@ The Weather App is a Flutter application that provides detailed weather forecast
 
 ## Usage
 **Run the app**
+
     ```bash
     fvm flutter run
     ```
