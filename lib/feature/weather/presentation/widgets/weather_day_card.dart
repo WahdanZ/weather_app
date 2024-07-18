@@ -35,8 +35,7 @@ class WeatherDayCard extends StatelessWidget {
               children: [
                 Text(
                   _getDayOfWeek(day.date),
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyMedium?.color),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 Image.network(
                   WeatherIconUtils.getIconUrl(day.weather.first.icon),
@@ -45,8 +44,7 @@ class WeatherDayCard extends StatelessWidget {
                 ),
                 Text(
                   '${day.minTemp.toStringAsFixed(0)}/${day.maxTemp.toStringAsFixed(0)}°',
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyMedium?.color),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),
@@ -70,8 +68,7 @@ class WeatherDayCard extends StatelessWidget {
               children: [
                 Text(
                   _getDayOfWeek(day.date),
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyMedium?.color),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 Image.network(
                   WeatherIconUtils.getIconUrl(day.weather.first.icon),
@@ -80,8 +77,7 @@ class WeatherDayCard extends StatelessWidget {
                 ),
                 Text(
                   '${day.minTemp.toStringAsFixed(0)}/${day.maxTemp.toStringAsFixed(0)}°',
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyMedium?.color),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),

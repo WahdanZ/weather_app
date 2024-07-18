@@ -9,8 +9,11 @@ class SelectedDayDetails extends StatelessWidget {
   final DailyWeather current;
   final WeatherUnits currentUnit;
 
-  const SelectedDayDetails(
-      {super.key, required this.current, required this.currentUnit});
+  const SelectedDayDetails({
+    super.key,
+    required this.current,
+    required this.currentUnit,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,16 +45,16 @@ class SelectedDayDetails extends StatelessWidget {
         ),
         Text(
           '${current.dayTemp.toStringAsFixed(0)}°',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 80,
-            color: Theme.of(context).textTheme.bodyMedium?.color,
+            color: Colors.white,
           ),
         ),
         Text(
           current.weather.first.description,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
-            color: Theme.of(context).textTheme.bodyMedium?.color,
+            color: Colors.white,
           ),
         ),
         const SizedBox(height: 20),

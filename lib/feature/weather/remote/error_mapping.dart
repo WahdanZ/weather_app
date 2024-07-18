@@ -1,7 +1,9 @@
 import '../../../base/index.dart';
 
-ErrorMapping openWeatherErrorMapping =
-    (Map<String, dynamic>? map, {int? code}) {
+ErrorMapping openWeatherErrorMapping = (
+  Map<String, dynamic>? map, {
+  int? code,
+}) {
   switch (code) {
     case 401:
       return NetworkFailure.unAuthorized(

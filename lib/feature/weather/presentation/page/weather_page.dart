@@ -5,7 +5,9 @@ import 'package:weather_app/feature/weather/presentation/bloc/weather_bloc.dart'
 import 'package:weather_app/feature/weather/presentation/widgets/weather_content.dart';
 
 class WeatherPage extends StatelessWidget {
-  const WeatherPage({super.key});
+  const WeatherPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

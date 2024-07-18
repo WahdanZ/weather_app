@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/feature/weather/presentation/bloc/weather_bloc.dart';
 
 class UnitToggle extends StatelessWidget {
-  const UnitToggle({super.key});
+  const UnitToggle({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

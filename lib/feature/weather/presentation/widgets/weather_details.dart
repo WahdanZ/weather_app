@@ -6,8 +6,11 @@ class WeatherDetails extends StatelessWidget {
   final DailyWeather current;
   final WeatherUnits currentUnit;
 
-  const WeatherDetails(
-      {super.key, required this.current, required this.currentUnit});
+  const WeatherDetails({
+    super.key,
+    required this.current,
+    required this.currentUnit,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -9,8 +9,11 @@ class DailyForecast extends StatelessWidget {
   final List<DailyWeather> daily;
   final DailyWeather selectedDay;
 
-  const DailyForecast(
-      {super.key, required this.daily, required this.selectedDay});
+  const DailyForecast({
+    super.key,
+    required this.daily,
+    required this.selectedDay,
+  });
 
   @override
   Widget build(BuildContext context) {
