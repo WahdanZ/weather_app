@@ -19,10 +19,19 @@ class SelectedDayDetails extends StatelessWidget {
         Stack(
           children: [
             Center(
-              child: Image.network(
-                WeatherIconUtils.getIconUrl(current.weather.first.icon),
-                width: 100,
-                height: 100,
+              child: Column(
+                children: [
+                  Text(
+                    _getDayOfWeek(current.date),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Image.network(
+                    WeatherIconUtils.getIconUrl(current.weather.first.icon),
+                    width: 100,
+                    height: 100,
+                  ),
+                ],
               ),
             ),
             const Positioned(
@@ -49,5 +58,17 @@ class SelectedDayDetails extends StatelessWidget {
         WeatherDetails(current: current, currentUnit: currentUnit),
       ],
     );
+  }
+
+  String _getDayOfWeek(DateTime date) {
+    return [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ][date.weekday - 1];
   }
 }
