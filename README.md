@@ -100,13 +100,16 @@ weather_app/
 │   ├── feature/                  # Main features of the app
 │   │   ├── weather/
 │   │   │   ├── data/             # Data layer (models, api client)
+│   │   │   │   ├── mapper/       # Mappers for converting between Data and Domain layer
 │   │   │   │   ├── model/        # Data models
 │   │   │   │   ├── repository/   # Repository implementation
-│   │   │   │   └── weather_api.dart # API client
-│   │   │   ├── domain/           # Domain layer (entities, use cases, repository interface)
+│   │   │   ├── remote/           # Remote data sources
+│   │   │   │   ├── model/        # Remote data models
+│   │   │   │   ├── error_mapper.dart  # Error mapper
+│   │   │   │   ├── weather_api.dart   # API client
+│   │   │   ├── domain/           # Domain layer (entities, use cases)
 │   │   │   │   ├── entity/       # Domain entities
 │   │   │   │   ├── usecases/     # Use cases
-│   │   │   │   └── repository/   # Repository interface
 │   │   │   ├── presentation/     # Presentation layer (bloc, widgets, pages)
 │   │   │   │   ├── bloc/         # Bloc state management
 │   │   │   │   ├── widgets/      # Reusable UI components
