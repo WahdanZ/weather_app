@@ -36,8 +36,7 @@ The Weather App is a Flutter application that provides detailed weather forecast
 
 ### Prerequisites
 - [Flutter](https://flutter.dev/docs/get-started/install)
-- [FVM (Flutter Version Management)](https://fvm.app/docs/getting_started/installation)
-- [Dart](https://dart.dev/get-dart)
+- [FVM (Flutter Version Management)](https://fvm.app/documentation/getting-started/installation)
 
 ### Setup
 1. **Clone the repository**
