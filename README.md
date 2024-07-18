@@ -1,6 +1,3 @@
-Sure, here's the updated README with a detailed project structure section:
-
----
 
 # Weather App
 
